@@ -1,65 +1,3 @@
-## Figma URL
-
-[Unsplash Images](https://www.figma.com/file/O2MaAAlr4nznh7m53azatL/Unsplash-images?node-id=0%3A1&t=cYDOCgqOs9IX2If0-1)
-
-## Steps
-
-#### Setup
-
-- npm install
-- npm run dev
-
-#### Initial Structure and Global Context
-
-Create three components - ThemeToggle, SearchForm and Gallery. Render all of them in App.jsx, and setup global context.
-
-#### Dark Theme - Initial Setup
-
-In the context of creating a state value called 'isDarkTheme' (boolean) and a helper function called 'toggleDarkTheme', set 'isDarkTheme' to the opposite value when 'toggleDarkTheme' is invoked. Pass 'isDarkTheme' and 'toggleDarkTheme' down to 'ThemeToggle'. In 'ThemeToggle', import two icons from the React Icons library (moon and sun) and create a button. When the button is clicked, invoke 'toggleDarkTheme', and display the appropriate icon based on the value of 'isDarkTheme' inside of the button.
-
-#### Dark Theme Class
-
-In the toggleDarkTheme add logic to add and remove .dark-theme class to body element based on isDarkTheme value.
-
-#### Dark Theme - CSS
-
-Create CSS variables for the background color and text color for both dark mode and normal mode, as well as a CSS variable for the dark mode transition.
-
-```css
-:root {
-  /* dark mode setup */
-  --dark-mode-bg-color: #333;
-  --dark-mode-text-color: #f0f0f0;
-  --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
-
-  --darkModeTransition: color 0.3s ease-in-out, background-color 0.3s
-      ease-in-out;
-}
-
-.dark-theme {
-  --textColor: var(--dark-mode-text-color);
-  --backgroundColor: var(--dark-mode-bg-color);
-}
-
-body {
-  transition: var(--darkModeTransition);
-  background: var(--backgroundColor);
-  color: var(--textColor);
-}
-```
-
-#### User Prefers Dark Mode
-
-```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    --textColor: var(--dark-mode-text-color);
-    --backgroundColor: var(--dark-mode-bg-color);
-  }
-}
-```
-
 #### SearchForm Structure
 
 Create a form with an input and a submit button. The input should have the following attributes: type='text', name='search', placeholder='cat', and className='form-input search-input'. When the user submits the form, access (for now log)the input value.
@@ -78,9 +16,9 @@ In order to use the Unsplash API to fetch images for your application, you will 
 
 #### Find the API Key and Correct URL for Searching Images
 
-- register an app
-- authorization (hint : public authentication)
-- search functionality (hint : search photos)
+-  register an app
+-  authorization (hint : public authentication)
+-  search functionality (hint : search photos)
 
 After signing up for an Unsplash account, you will need to locate your API key and the correct URL to use when searching for images using the Unsplash API. This information can be found in the API documentation provided by Unsplash.
 
@@ -129,11 +67,11 @@ Finally, you can add CSS to your application to style the components and provide
 #### Dark Theme Class - Code
 
 ```js
-const body = document.querySelector('body');
-body.classList.toggle('dark-theme', newDarkTheme);
+const body = document.querySelector("body");
+body.classList.toggle("dark-theme", newDarkTheme);
 
 // alternative setup
-document.body.classList.toggle('dark-theme', newDarkTheme);
+document.body.classList.toggle("dark-theme", newDarkTheme);
 ```
 
 const body = document.querySelector('body'); - This line selects the body element of the current document using the document.querySelector() method, which returns the first element that matches the specified selector. In this case, it is selecting the body element.
@@ -160,4 +98,4 @@ Therefore, without including searchTerm in the queryKey array, the useQuery hook
 
 #### Vite ENV Vars
 
-- .env : must be included in .gitignore
+-  .env : must be included in .gitignore
