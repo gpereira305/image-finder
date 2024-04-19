@@ -5,10 +5,12 @@ import ThemeToggler from "./components/ThemeToggler";
 const App = () => {
    return (
       <main>
-         <Gallery />
-         <SearchForm />
          <ThemeToggler />
+         <SearchForm />
+         <Gallery />
       </main>
    );
 };
 export default App;
+
+// 6QrWBcJJl672DGyNTGzzbNfM6SSqxZzHFbyZt5ZbzkQ

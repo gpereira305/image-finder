@@ -8,9 +8,9 @@ export default function ThemeToggler() {
       <div className="toggle-container">
          <span className="theme-toggler" onClick={handleToggleTheme}>
             {theme ? (
-               <BsFillSunFill className="toggle-icon" />
-            ) : (
                <BsFillMoonFill className="toggle-icon" />
+            ) : (
+               <BsFillSunFill className="toggle-icon" />
             )}
          </span>
       </div>
